@@ -1,0 +1,29 @@
+/*
+Dado un arreglo con nombres,
+1. Obtener todos los elementos que excedan los 5 caracteres
+2. Utilizar map para transformar todos los nombres a minúscula
+3. Crear un arreglo con todos los nombres que comiencen con P
+4. Utilizando .count, contar los elementos que empiecen con 'A', 'B' o 'C'.
+5. Utilizando .map, crear un arreglo con la cantidad de letras que tiene cada nombre.
+ */
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+public class Ejercicio2 {
+
+    public static void main(String[] args) {
+        List<String> nombres = Arrays.asList("Anastasia", "Beatriz", "Clara", "Carla", "Marianela", "Paula", "Pia");
+        //1. Obtener todos los elementos que excedan los 5 caracteres
+        List<String> filtrados = nombres.stream().filter(a->a.length()>5).collect(Collectors.toList());
+        System.out.printf("\n El resultado de filtrar el arreglo por los que tienen mas de 5 caractres es:\n"+filtrados);
+        //2. Utilizar map para transformar todos los nombres a minúscula
+        List<String> minuscula = nombres.stream().map(a->a.toLowerCase()).collect(Collectors.toList());
+        System.out.printf("\n El resultado de pasar a minusculas el arreglo es:\n"+minuscula);
+        //3. Crear un arreglo con todos los nombres que comiencen con P
+        //4. Utilizando .count, contar los elementos que empiecen con 'A', 'B' o 'C'.
+        //5. Utilizando .map, crear un arreglo con la cantidad de letras que tiene cada nombre.
+    }
+
+}
